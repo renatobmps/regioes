@@ -1,0 +1,7 @@
+table.regioes {
+    max-height: 90vh;
+    overflow: scroll;
+}
+table.regioes td, table.regioes th{
+    border: .5px solid;
+}

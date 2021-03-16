@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import '../css/Regioes.css';
 
 export default function Home() {
     const [regioes, setRegioes] = useState([]);
@@ -14,32 +15,30 @@ export default function Home() {
         )
     }
     return (
-        <table>
+        <table class="regioes">
             <thead>
                 <tr>
-                    <th>#</th>
-                    <th>Bairro</th>
+                    <th>Distrito</th>
                     <th>Municipio</th>
                     <th>Microrregiao</th>
                     <th>Mesorregiao</th>
                     <th>UF</th>
                     <th>Região</th>
-                    <th>Link</th>
+                    {/* <th>Link</th> */}
                 </tr>
             </thead>
             <tbody>
                 {
                     regioes.map((regiao, i) => {
                         return (
-                            <tr>
-                                <th>{regiao.id}</th>
-                                <td>{regiao.nome}</td>
-                                <td>{regiao.municipio.nome}</td>
-                                <td>{regiao.municipio.microrregiao.nome}</td>
-                                <td>{regiao.municipio.microrregiao.mesorregiao.nome}</td>
-                                <td>{regiao.municipio.microrregiao.mesorregiao.UF.sigla}</td>
-                                <td>{regiao.municipio.microrregiao.mesorregiao.UF.regiao.nome}</td>
-                                <td><a href="#">#</a></td>
+                            <tr key={i+regiao.id}>
+                                <th>{regiao.id} - {regiao.nome}</th>
+                                <td>{regiao.municipio.id} - {regiao.municipio.nome}</td>
+                                <td>{regiao.municipio.microrregiao.id} - {regiao.municipio.microrregiao.nome}</td>
+                                <td>{regiao.municipio.microrregiao.mesorregiao.id} - {regiao.municipio.microrregiao.mesorregiao.nome}</td>
+                                <td>{regiao.municipio.microrregiao.mesorregiao.UF.id} - {regiao.municipio.microrregiao.mesorregiao.UF.sigla}</td>
+                                <td>{regiao.municipio.microrregiao.mesorregiao.UF.regiao.id} - {regiao.municipio.microrregiao.mesorregiao.UF.regiao.nome}</td>
+                                {/* <td><a href={`?uf=${regiao.municipio.microrregiao.mesorregiao.UF.sigla}`}>#</a></td> */}
                             </tr>
                         )
                     })
