@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import '../css/Regioes.css';
 
-export default function Home() {
+export default function Completo() {
     const [regioes, setRegioes] = useState([]);
     useEffect(() => {
         fetch('https://servicodados.ibge.gov.br/api/v1/localidades/distritos?orderBy=id')
@@ -15,7 +14,7 @@ export default function Home() {
         )
     }
     return (
-        <table class="regioes">
+        <table className="regioes">
             <thead>
                 <tr>
                     <th>Distrito</th>

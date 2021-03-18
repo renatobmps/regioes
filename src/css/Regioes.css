@@ -1,7 +1,15 @@
-table.regioes {
+table {
     max-height: 90vh;
     overflow: scroll;
+    display: contents;
 }
-table.regioes td, table.regioes th{
+
+table td,
+table th {
     border: .5px solid;
+    padding: .3em 1em;
+}
+
+table th{
+    text-transform: uppercase;
 }
